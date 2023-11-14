@@ -66,16 +66,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << RED << "The ClapTrap " << this->Name << " Insufficient energy to repair or has wasted !!" << RESET <<std::endl;
 }
 
-void ClapTrap::status()
-{
-	std::cout << std::left << std::setw(12) << "Hit Point";
-	std::cout << " : " << GREEN << this->Hit_Point << "/" << "10" << RESET << std::endl;
-	std::cout << std::setw(12) << "Energy Point";
-	std::cout << " : " << BLUE << this->Energy_Point << "/" << "10" << RESET << std::endl;
-	std::cout << std::setw(12) << "Energy Point";
-	std::cout << " : " << RED << this->Attack_damage << "/" << "0" << RESET << std::endl;
-}
-
 ClapTrap::~ClapTrap()
 {
 	std::cout << RED << "Calling Destructor" << RESET << std::endl;

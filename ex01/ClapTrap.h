@@ -1,9 +1,10 @@
 
 #ifndef CPP03_CLAPTRAP_H
-# define CPP03_CLAPTRAP_H
+#define CPP03_CLAPTRAP_H
 
-# include <iostream>
-# include <iomanip>
+#include <iostream>
+#include <string>
+#include <iomanip>
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"
@@ -14,7 +15,7 @@
 # define RESET "\033[0m"
 
 class ClapTrap {
-private:
+protected:
 	std::string Name;
 	int 		Hit_Point;
 	int 		Energy_Point;
@@ -27,7 +28,6 @@ public:
 	void		attack(const std::string& target);
 	void		takeDamage(unsigned int amount);
 	void		beRepaired(unsigned int amount);
-	void		status(void );
 	~ClapTrap();
 };
 

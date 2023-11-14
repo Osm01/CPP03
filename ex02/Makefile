@@ -1,9 +1,9 @@
-NAME = claptrap
+NAME = fragtrap
 
 COMPIs = c++ -std=c++98
 ERRORS = -Wall -Wextra -Werror
 
-FILES = ClapTrap.cpp main.cpp
+FILES = ClapTrap.cpp main.cpp FragTrap.cpp
 
 all : $(NAME)
 

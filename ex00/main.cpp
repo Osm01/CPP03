@@ -4,11 +4,13 @@ int main(void)
 {
 	int i = 0;
 	ClapTrap clapTrap("OUSSAMA");
+	clapTrap.status();
 	while (i < 10)
 	{
 		clapTrap.takeDamage(1);
 		i ++;
 	}
+	clapTrap.status();
 	i = 0;
 	while (i < 10)
 	{
@@ -16,6 +18,6 @@ int main(void)
 		i ++;
 	}
 	// check health
-	clapTrap.beRepaired(10);
+	clapTrap.status();
 	clapTrap.beRepaired(10);
 }
