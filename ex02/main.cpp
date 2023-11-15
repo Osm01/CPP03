@@ -7,9 +7,13 @@ int main(void)
 	fragTrap.status();
 	fragTrap.attack("IDRISSI");
 	fragTrap.status();
-	fragTrap.takeDamage(99);
-	fragTrap.status();
-	fragTrap.beRepaired(99);
-	fragTrap.status();
-	fragTrap.highFivesGuys();
+	FragTrap	fragTrap1 = fragTrap;
+	fragTrap1.status();
+	fragTrap1.highFivesGuys();
+	// upcast allow
+	ClapTrap	clapTrap = fragTrap1;
+	clapTrap.takeDamage(50);
+	// downcast not allow
+//	FragTrap	fragTrap2 = clapTrap;
+//	fragTrap2.status();
 }

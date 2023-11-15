@@ -3,19 +3,33 @@
 
 ScavTrap::ScavTrap()
 {
+	std::cout << GREEN << "Calling default constructor of ScavTrap" << RESET << std::endl;
 	this->Name = "ScavTrapX";
 	this->Hit_Point = 100;
 	this->Energy_Point = 50;
 	this->Attack_damage = 20;
-	std::cout << GREEN << "Calling default constructor of ScavTrap" << RESET << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
+	std::cout << YELLOW << "Calling parameter constructor of ScavTrap" << RESET << std::endl;
 	this->Hit_Point = 100;
 	this->Energy_Point = 50;
 	this->Attack_damage = 20;
-	std::cout << YELLOW << "Calling parameter constructor of ScavTrap" << RESET << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
+{
+	std::cout << BLUE << "Calling copy constructor of ScavTrap" << RESET << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &other){
+	std::cout << PURPLE << "Calling copy assignment operator of ScavTrap" << RESET << std::endl;
+	if (this != &other)
+	{
+		ClapTrap::operator=(other);
+	}
+	return (*this);
 }
 
 void ScavTrap::attack(const std::string &target)

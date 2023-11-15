@@ -1,7 +1,7 @@
 NAME = diamondtrap
 
-COMPIs = c++ -std=c++98
-ERRORS = -Wall -Wextra -Werror
+CXX = c++ -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror
 
 FILES = main.cpp ./FragTrap.cpp ./DiamondTrap.cpp ./ClapTrap.cpp ./ScavTrap.cpp
 
@@ -9,7 +9,7 @@ FILES = main.cpp ./FragTrap.cpp ./DiamondTrap.cpp ./ClapTrap.cpp ./ScavTrap.cpp
 all : $(NAME)
 
 $(NAME) : $(FILES)
-	$(COMPIs) $(ERRORS) $(FILES) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(FILES) -o $(NAME)
 
 clean :
 	rm -rf $(NAME)
@@ -17,3 +17,5 @@ clean :
 fclean : clean
 
 re : fclean all
+
+.PHONY: all clean fclean re

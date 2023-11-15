@@ -27,4 +27,19 @@ int main(void)
 		scavTrap.status();
 		scavTrap.guardGate();
 	}
+	std::cout << GREEN << "|------------------|COPY TEST |------------------|" << RESET << std::endl;
+	{
+		ScavTrap scavTrap("C0");
+		scavTrap.status();
+		scavTrap.attack("R1");
+		scavTrap.takeDamage(99);
+		scavTrap.status();
+		ScavTrap scavTrap1 = scavTrap;
+		scavTrap1.status();
+		scavTrap1.beRepaired(99);
+		scavTrap1.status();
+		scavTrap1.attack("Idrissi");
+		ClapTrap trap = scavTrap1;
+		trap.attack("IDRISsi");
+	}
 }

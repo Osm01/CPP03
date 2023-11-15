@@ -1,12 +1,8 @@
-//
-// Created by ouidriss on 11/11/23.
-//
 
 #include "FragTrap.h"
 
 FragTrap::FragTrap()
 {
-	this->Name = "FragTrapX";
 	this->Hit_Point = 100;
 	this->Energy_Point = 100;
 	this->Attack_damage = 30;
@@ -21,19 +17,33 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	std::cout << YELLOW << "Calling parameter constructor of FragTrap" << RESET << std::endl;
 }
 
-void FragTrap::highFivesGuys(void)
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 {
-	std::cout << "Give me some high fives, guys!" << std::endl;
+	std::cout << BLUE << "Calling copy constructor of FragTrap" << RESET << std::endl;
 }
 
-void FragTrap::status()
+FragTrap &FragTrap::operator=(const FragTrap &other){
+	std::cout << PURPLE << "Calling copy assignment operator of FragTrap " << RESET << std::endl;
+	if (this != &other)
+	{
+		ClapTrap::operator=(other);
+	}
+	return (*this);
+}
+
+void	FragTrap::status(void)
 {
 	std::cout << std::left << std::setw(12) << "Hit Point";
 	std::cout << " : " << GREEN << this->Hit_Point << "/" << "100" << RESET << std::endl;
 	std::cout << std::setw(12) << "Energy Point";
-	std::cout << " : " << BLUE << this->Energy_Point << "/" << "100" << RESET << std::endl;
+	std::cout << " : " << BLUE << this->Energy_Point << "/" << "50" << RESET << std::endl;
 	std::cout << std::setw(12) << "Energy Point";
-	std::cout << " : " << RED << this->Attack_damage << "/" << "30" << RESET << std::endl;
+	std::cout << " : " << RED << this->Attack_damage << "/" << "20" << RESET << std::endl;
+}
+
+void FragTrap::highFivesGuys(void)
+{
+	std::cout << "Give me some high fives, guys!" << std::endl;
 }
 
 FragTrap::~FragTrap()

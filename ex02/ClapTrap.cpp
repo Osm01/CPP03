@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(const ClapTrap &other): Name(other.Name) , Hit_Point(other.Hi
 	std::cout << BLUE << "Calling copy constructor" << RESET << std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(ClapTrap &other){
+ClapTrap &ClapTrap::operator=(const ClapTrap &other){
 	std::cout << PURPLE << "Calling copy assignment operator " << RESET << std::endl;
 	if (this != &other)
 	{
